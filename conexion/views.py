@@ -3,6 +3,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Conexion, Nodo
 from .serializers import ConexionSerializer
+from collections import defaultdict
+import heapq
 
 class ConexionListCreateAPIView(APIView):
     def get(self, request):
@@ -61,3 +63,66 @@ class ConexionRetrieveUpdateDestroyAPIView(APIView):
             return Response({'detail': 'Conexión no encontrada'}, status=status.HTTP_404_NOT_FOUND)
         conexion.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+class CalcularCaminoAPIView(APIView):
+    def get(self, request, id_nodo_origen, id_nodo_destino):
+        # Crear un grafo a partir de las conexiones
+        grafo = self.crear_grafo()
+        camino, distancia_total = self.dijkstra(grafo, id_nodo_origen, id_nodo_destino)
+
+        if camino is None:
+            return Response({'detail': 'No se pudo encontrar un camino entre los nodos proporcionados.'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Generar la lista de conexiones entre los nodos en el camino
+        distancias_camino = []
+        for i in range(len(camino) - 1):
+            nodo_actual = camino[i]
+            siguiente_nodo = camino[i + 1]
+            # Buscar la distancia de la conexión
+            conexion = Conexion.objects.get(id_nodo_origen=nodo_actual, id_nodo_destino=siguiente_nodo)
+            distancias_camino.append({
+                'nodo_origen': nodo_actual,
+                'nodo_destino': siguiente_nodo,
+                'distancia': conexion.distancia
+            })
+
+        return Response({
+            'camino': distancias_camino,
+            'distancia_total': distancia_total
+        }, status=status.HTTP_200_OK)
+
+    def crear_grafo(self):
+        # Crea un grafo a partir de las conexiones en la base de datos
+        grafo = defaultdict(list)
+        conexiones = Conexion.objects.all()
+        for conexion in conexiones:
+            grafo[conexion.id_nodo_origen].append((conexion.id_nodo_destino, conexion.distancia))
+            grafo[conexion.id_nodo_destino].append((conexion.id_nodo_origen, conexion.distancia))  # Para conexiones bidireccionales
+        return grafo
+
+    def dijkstra(self, grafo, inicio, fin):
+        # Implementación del algoritmo de Dijkstra
+        distancias = {nodo: float('infinity') for nodo in grafo}
+        distancias[inicio] = 0
+        prioridad = [(0, inicio)]
+        caminos = {nodo: [] for nodo in grafo}
+        caminos[inicio] = [inicio]
+
+        while prioridad:
+            distancia_actual, nodo_actual = heapq.heappop(prioridad)
+
+            if distancia_actual > distancias[nodo_actual]:
+                continue
+
+            for vecino, peso in grafo[nodo_actual]:
+                distancia = distancia_actual + peso
+
+                if distancia < distancias[vecino]:
+                    distancias[vecino] = distancia
+                    caminos[vecino] = caminos[nodo_actual] + [vecino]
+                    heapq.heappush(prioridad, (distancia, vecino))
+
+        if distancias[fin] == float('infinity'):
+            return None, None
+
+        return caminos[fin], distancias[fin]

@@ -7,4 +7,7 @@ urlpatterns = [
 
     # Ruta para obtener, actualizar o eliminar una conexión específica por ID
     path('conexion/<int:pk>/', views.ConexionRetrieveUpdateDestroyAPIView.as_view(), name='conexion-retrieve-update-destroy'),
+
+    #Ruta para obtener la ruta mas optima entre 2 nodos por ID
+    path('camino/', views.CalcularCaminoAPIView.as_view(), name='camino')
 ]
