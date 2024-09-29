@@ -101,25 +101,17 @@ class CalcularCaminoAPIView(APIView):
             'distancia_total': distancia_total
         }, status=status.HTTP_200_OK)
 
-    def crear_grafo(self, id_nodo_origen, id_nodo_destino):
+    def crear_grafo(self):
         # Crea un grafo a partir de las conexiones en la base de datos
         grafo = defaultdict(list)
-        
-        # Filtra las conexiones que involucran los nodos de origen y destino
-        conexiones = Conexion.objects.filter(
-            id_nodo_origen=id_nodo_origen
-        ) | Conexion.objects.filter(
-            id_nodo_destino=id_nodo_origen
-        ) | Conexion.objects.filter(
-            id_nodo_origen=id_nodo_destino
-        ) | Conexion.objects.filter(
-            id_nodo_destino=id_nodo_destino
-        )
+        conexiones = Conexion.objects.all()  # Obtiene todas las conexiones
 
         for conexion in conexiones:
-            grafo[conexion.id_nodo_origen].append((conexion.id_nodo_destino, conexion.distancia))
-            grafo[conexion.id_nodo_destino].append((conexion.id_nodo_origen, conexion.distancia))
+            # Añade la conexión bidireccional
+            grafo[conexion.id_nodo_origen_id].append((conexion.id_nodo_destino_id, conexion.distancia))
+            grafo[conexion.id_nodo_destino_id].append((conexion.id_nodo_origen_id, conexion.distancia))
 
+        print(f"Grafo: {dict(grafo)}")  # Para depuración, imprime el grafo
         return grafo
 
     def dijkstra(self, grafo, inicio, fin):
