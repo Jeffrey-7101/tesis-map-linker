@@ -63,16 +63,18 @@ class ConexionRetrieveUpdateDestroyAPIView(APIView):
             return Response({'detail': 'Conexión no encontrada'}, status=status.HTTP_404_NOT_FOUND)
         conexion.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
 class CalcularCaminoAPIView(APIView):
     def get(self, request):
         id_nodo_origen = request.query_params.get('id_nodo_origen')
         id_nodo_destino = request.query_params.get('id_nodo_destino')
-        #import pudb;pudb.set_trace()
+
         # Crear un grafo a partir de las conexiones relevantes
         grafo = self.crear_grafo()
-        #return Response(grafo)
-        camino, distancia_total = self.dijkstra(grafo, id_nodo_origen, id_nodo_destino)
+        
+        try:
+            camino, distancia_total = self.dijkstra(grafo, id_nodo_origen, id_nodo_destino)
+        except ValueError as e:
+            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
         if camino is None:
             return Response({'detail': 'No se pudo encontrar un camino entre los nodos proporcionados.'}, 
@@ -83,11 +85,10 @@ class CalcularCaminoAPIView(APIView):
         for i in range(len(camino) - 1):
             nodo_actual = camino[i]
             siguiente_nodo = camino[i + 1]
-            # Buscar la distancia de la conexión
+            
             try:
                 conexion = Conexion.objects.get(id_nodo_origen=nodo_actual, id_nodo_destino=siguiente_nodo)
             except Conexion.DoesNotExist:
-                # Manejar el caso en que la conexión no existe
                 return Response({'detail': f'No existe conexión entre {nodo_actual} y {siguiente_nodo}.'}, 
                                 status=status.HTTP_404_NOT_FOUND)
             
@@ -111,21 +112,15 @@ class CalcularCaminoAPIView(APIView):
             grafo[conexion.id_nodo_origen_id].append((conexion.id_nodo_destino_id, conexion.distancia))
             grafo[conexion.id_nodo_destino_id].append((conexion.id_nodo_origen_id, conexion.distancia))
 
-<<<<<<< HEAD
-        #print("Grafo construido:", dict(grafo))  # Depuración: imprime el grafo
-        return grafo
-
-    def dijkstra(self, grafo, inicio, fin):
-        print(f'Inicio {inicio}, Fin {fin},Grafo: {grafo}')
-=======
         print("Grafo construido:", dict(grafo))  # Depuración: imprime el grafo
         return grafo
 
     def dijkstra(self, grafo, inicio, fin):
->>>>>>> 40e0f5dba47c69530a114bb0be47afb469c49b0c
         # Verifica si los nodos de inicio y fin están en el grafo
-        if inicio not in grafo or fin not in grafo:
-            return None, None  # O puedes lanzar un error más descriptivo
+        if inicio not in grafo:
+            raise ValueError(f'El nodo de inicio "{inicio}" no se encuentra en el grafo.')
+        if fin not in grafo:
+            raise ValueError(f'El nodo de fin "{fin}" no se encuentra en el grafo.')
 
         # Implementación del algoritmo de Dijkstra
         distancias = {nodo: float('infinity') for nodo in grafo}
