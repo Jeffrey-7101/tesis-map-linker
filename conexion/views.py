@@ -65,8 +65,9 @@ class ConexionRetrieveUpdateDestroyAPIView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class CalcularCaminoAPIView(APIView):
-    def get(self, request, id_nodo_origen, id_nodo_destino):
-        # Crear un grafo a partir de las conexiones
+    def get(self, request):
+        id_nodo_origen = request.query_params.get('id_nodo_origen')
+        id_nodo_destino = request.query_params.get('id_nodo_destino')
         grafo = self.crear_grafo()
         camino, distancia_total = self.dijkstra(grafo, id_nodo_origen, id_nodo_destino)
 
