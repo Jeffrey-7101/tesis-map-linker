@@ -14,10 +14,17 @@ RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copiar el proyecto Django al contenedor
-COPY . .
+COPY . /app
 
-# Exponer el puerto que el servidor de desarrollo usará
+#Establece la variable de entorno para Django
+ENV DJANGO_SETTINGS_MODULE=maplinker.settings
+
+RUN python manage.py collectstatic --noinput
+
+
+#Exponer el puerto que el servidor de desarrollo usará
 EXPOSE 8000
 
 # Ejecutar el servidor de desarrollo
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
+CMD ["uvicorn", "maplinker.asgi:application", "--host", "0.0.0.0", "--port", "8000"]

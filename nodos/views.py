@@ -33,7 +33,7 @@ class NodoUpdateDelete(APIView):
     def put(self, request, id):
         # Actualizar un nodo específico
         try:
-            nodo = Nodo.objects.get(id=id)
+            nodo = Nodo.objects.get(id_nodo=id)
         except Nodo.DoesNotExist:
             return Response({'detail':'Node not found'},status=status.HTTP_404_NOT_FOUND)
         serializer = NodoSerializer(nodo, data=request.data)

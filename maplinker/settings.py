@@ -25,7 +25,8 @@ SECRET_KEY = 'w0kx74!%og*a%5&%jbbw4*%#iz2*s$d&er1&87#l!-h^q=t5jr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['129.159.59.70']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','129.159.59.70']
+CSRF_TRUSTED_ORIGINS = ['http://129.159.59.70:8000']
 
 
 # Application definition
@@ -78,11 +79,11 @@ WSGI_APPLICATION = 'maplinker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DB'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+        'NAME': 'mydatabase', 
+        'USER': 'myuser',
+        'PASSWORD': 'mypassword',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -124,4 +125,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+#directorio donde se recopilan los archivos estáticos
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+
+# Directorios adicionales donde Django buscará archivos estáticos
+STATICFILES_DIRS = [
+
+]
+
+# URL para acceder a los archivos estáticos
 STATIC_URL = '/static/'
