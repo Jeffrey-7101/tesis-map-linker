@@ -63,6 +63,8 @@ class ConexionRetrieveUpdateDestroyAPIView(APIView):
             return Response({'detail': 'Conexión no encontrada'}, status=status.HTTP_404_NOT_FOUND)
         conexion.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
 class CalcularCaminoAPIView(APIView):
     def get(self, request):
         id_nodo_origen = request.query_params.get('id_nodo_origen')
@@ -74,11 +76,18 @@ class CalcularCaminoAPIView(APIView):
         try:
             camino, distancia_total = self.dijkstra(grafo, id_nodo_origen, id_nodo_destino)
         except ValueError as e:
-            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            # Extraer los nodos disponibles del grafo
+            nodos_disponibles = list(grafo.keys())
+            return Response({
+                'detail': str(e),
+                'nodos_disponibles': nodos_disponibles
+            }, status=status.HTTP_400_BAD_REQUEST)
 
         if camino is None:
-            return Response({'detail': 'No se pudo encontrar un camino entre los nodos proporcionados.'}, 
-                            status=status.HTTP_404_NOT_FOUND)
+            return Response({
+                'detail': 'No se pudo encontrar un camino entre los nodos proporcionados.',
+                'nodos_disponibles': list(grafo.keys())
+            }, status=status.HTTP_404_NOT_FOUND)
 
         # Generar la lista de conexiones entre los nodos en el camino
         distancias_camino = []
@@ -89,8 +98,10 @@ class CalcularCaminoAPIView(APIView):
             try:
                 conexion = Conexion.objects.get(id_nodo_origen=nodo_actual, id_nodo_destino=siguiente_nodo)
             except Conexion.DoesNotExist:
-                return Response({'detail': f'No existe conexión entre {nodo_actual} y {siguiente_nodo}.'}, 
-                                status=status.HTTP_404_NOT_FOUND)
+                return Response({
+                    'detail': f'No existe conexión entre {nodo_actual} y {siguiente_nodo}.',
+                    'nodos_disponibles': list(grafo.keys())
+                }, status=status.HTTP_404_NOT_FOUND)
             
             distancias_camino.append({
                 'nodo_origen': nodo_actual,
