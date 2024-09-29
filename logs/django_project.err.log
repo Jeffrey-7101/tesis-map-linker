@@ -2699,3 +2699,592 @@ Forbidden: /conexion/conexion/
 [2024-09-29 18:36:34 +0000] [212283] [INFO] Booting worker with pid: 212283
 Forbidden: /conexion/conexion/
 Bad Request: /conexion/conexion/
+Not Found: /camino/
+Not Found: /camino/
+[2024-09-29 19:42:58 +0000] [212281] [INFO] Handling signal: term
+[2024-09-29 19:42:58 +0000] [212283] [INFO] Worker exiting (pid: 212283)
+[2024-09-29 19:42:58 +0000] [212281] [INFO] Shutting down: Master
+[2024-09-29 19:42:59 +0000] [213755] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 19:42:59 +0000] [213755] [INFO] Listening at: http://0.0.0.0:8001 (213755)
+[2024-09-29 19:42:59 +0000] [213755] [INFO] Using worker: sync
+[2024-09-29 19:42:59 +0000] [213757] [INFO] Booting worker with pid: 213757
+Not Found: /camino/
+Internal Server Error: /conexion/camino/
+Traceback (most recent call last):
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: get() missing 2 required positional arguments: 'id_nodo_origen' and 'id_nodo_destino'
+Internal Server Error: /conexion/camino/
+Traceback (most recent call last):
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: get() missing 2 required positional arguments: 'id_nodo_origen' and 'id_nodo_destino'
+[2024-09-29 19:46:29 +0000] [213755] [INFO] Handling signal: term
+[2024-09-29 19:46:29 +0000] [213757] [INFO] Worker exiting (pid: 213757)
+[2024-09-29 19:46:30 +0000] [213755] [INFO] Shutting down: Master
+[2024-09-29 19:46:30 +0000] [213820] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 19:46:30 +0000] [213820] [INFO] Listening at: http://0.0.0.0:8001 (213820)
+[2024-09-29 19:46:30 +0000] [213820] [INFO] Using worker: sync
+[2024-09-29 19:46:30 +0000] [213822] [INFO] Booting worker with pid: 213822
+Internal Server Error: /conexion/camino/
+Traceback (most recent call last):
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 72, in get
+    camino, distancia_total = self.dijkstra(grafo, id_nodo_origen, id_nodo_destino)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 126, in dijkstra
+    if distancias[fin] == float('infinity'):
+KeyError: '28'
+Internal Server Error: /conexion/camino/
+Traceback (most recent call last):
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 72, in get
+    camino, distancia_total = self.dijkstra(grafo, id_nodo_origen, id_nodo_destino)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 126, in dijkstra
+    if distancias[fin] == float('infinity'):
+KeyError: '28'
+Internal Server Error: /conexion/camino/
+Traceback (most recent call last):
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 72, in get
+    camino, distancia_total = self.dijkstra(grafo, id_nodo_origen, id_nodo_destino)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 126, in dijkstra
+    if distancias[fin] == float('infinity'):
+KeyError: '28'
+Internal Server Error: /conexion/camino/
+Traceback (most recent call last):
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 72, in get
+    camino, distancia_total = self.dijkstra(grafo, id_nodo_origen, id_nodo_destino)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 126, in dijkstra
+    if distancias[fin] == float('infinity'):
+KeyError: '28'
+Internal Server Error: /conexion/camino/
+Traceback (most recent call last):
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 72, in get
+    camino, distancia_total = self.dijkstra(grafo, id_nodo_origen, id_nodo_destino)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 126, in dijkstra
+    if distancias[fin] == float('infinity'):
+KeyError: '20'
+[2024-09-29 19:52:49 +0000] [213820] [INFO] Handling signal: term
+[2024-09-29 19:52:49 +0000] [213822] [INFO] Worker exiting (pid: 213822)
+[2024-09-29 19:52:49 +0000] [213820] [INFO] Shutting down: Master
+[2024-09-29 19:52:50 +0000] [213917] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 19:52:50 +0000] [213917] [INFO] Listening at: http://0.0.0.0:8001 (213917)
+[2024-09-29 19:52:50 +0000] [213917] [INFO] Using worker: sync
+[2024-09-29 19:52:50 +0000] [213919] [INFO] Booting worker with pid: 213919
+Internal Server Error: /conexion/camino/
+Traceback (most recent call last):
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 74, in get
+    camino, distancia_total = self.dijkstra(grafo, id_nodo_origen, id_nodo_destino)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 147, in dijkstra
+    if distancias[fin] == float('infinity'):
+KeyError: '28'
+Internal Server Error: /conexion/camino/
+Traceback (most recent call last):
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 74, in get
+    camino, distancia_total = self.dijkstra(grafo, id_nodo_origen, id_nodo_destino)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 147, in dijkstra
+    if distancias[fin] == float('infinity'):
+KeyError: '20'
+Internal Server Error: /conexion/camino/
+Traceback (most recent call last):
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 74, in get
+    camino, distancia_total = self.dijkstra(grafo, id_nodo_origen, id_nodo_destino)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 147, in dijkstra
+    if distancias[fin] == float('infinity'):
+KeyError: '20'
+[2024-09-29 20:00:13 +0000] [213917] [INFO] Handling signal: term
+[2024-09-29 20:00:13 +0000] [213919] [INFO] Worker exiting (pid: 213919)
+[2024-09-29 20:00:13 +0000] [213917] [INFO] Shutting down: Master
+[2024-09-29 20:00:14 +0000] [214020] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 20:00:14 +0000] [214020] [INFO] Listening at: http://0.0.0.0:8001 (214020)
+[2024-09-29 20:00:14 +0000] [214020] [INFO] Using worker: sync
+[2024-09-29 20:00:14 +0000] [214022] [INFO] Booting worker with pid: 214022
+Internal Server Error: /conexion/camino/
+Traceback (most recent call last):
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 73, in get
+    grafo = self.crear_grafo(id_nodo_origen, id_nodo_destino)
+TypeError: crear_grafo() takes 1 positional argument but 3 were given
+Internal Server Error: /conexion/camino/
+Traceback (most recent call last):
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 73, in get
+    grafo = self.crear_grafo(id_nodo_origen, id_nodo_destino)
+TypeError: crear_grafo() takes 1 positional argument but 3 were given
+[2024-09-29 20:01:32 +0000] [214020] [INFO] Handling signal: term
+[2024-09-29 20:01:32 +0000] [214022] [INFO] Worker exiting (pid: 214022)
+[2024-09-29 20:01:32 +0000] [214020] [INFO] Shutting down: Master
+[2024-09-29 20:01:33 +0000] [214057] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 20:01:33 +0000] [214057] [INFO] Listening at: http://0.0.0.0:8001 (214057)
+[2024-09-29 20:01:33 +0000] [214057] [INFO] Using worker: sync
+[2024-09-29 20:01:33 +0000] [214059] [INFO] Booting worker with pid: 214059
+Internal Server Error: /conexion/camino/
+Traceback (most recent call last):
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 74, in get
+    camino, distancia_total = self.dijkstra(grafo, id_nodo_origen, id_nodo_destino)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 139, in dijkstra
+    if distancias[fin] == float('infinity'):
+KeyError: '20'
+[2024-09-29 20:10:01 +0000] [214057] [INFO] Handling signal: term
+[2024-09-29 20:10:01 +0000] [214059] [INFO] Worker exiting (pid: 214059)
+[2024-09-29 20:10:02 +0000] [214057] [INFO] Shutting down: Master
+[2024-09-29 20:10:02 +0000] [214453] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 20:10:02 +0000] [214453] [INFO] Listening at: http://0.0.0.0:8001 (214453)
+[2024-09-29 20:10:02 +0000] [214453] [INFO] Using worker: sync
+[2024-09-29 20:10:02 +0000] [214455] [INFO] Booting worker with pid: 214455
+Internal Server Error: /conexion/camino/
+Traceback (most recent call last):
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/renderers.py", line 726, in render
+    template = loader.get_template(self.template)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: rest_framework/api.html
+Not Found: /conexion/camino/
+Not Found: /conexion/camino/
+Not Found: /conexion/camino/
+[2024-09-29 21:00:06 +0000] [214453] [INFO] Handling signal: term
+[2024-09-29 21:00:06 +0000] [214455] [INFO] Worker exiting (pid: 214455)
+[2024-09-29 21:00:06 +0000] [214453] [INFO] Shutting down: Master
+[2024-09-29 21:00:07 +0000] [215862] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 21:00:07 +0000] [215862] [INFO] Listening at: http://0.0.0.0:8001 (215862)
+[2024-09-29 21:00:07 +0000] [215862] [INFO] Using worker: sync
+[2024-09-29 21:00:07 +0000] [215864] [INFO] Booting worker with pid: 215864
+Internal Server Error: /conexion/camino/
+Traceback (most recent call last):
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'collections.defaultdict'>`
+[2024-09-29 21:01:21 +0000] [215862] [INFO] Handling signal: term
+[2024-09-29 21:01:21 +0000] [215864] [INFO] Worker exiting (pid: 215864)
+[2024-09-29 21:01:21 +0000] [215862] [INFO] Shutting down: Master
+[2024-09-29 21:01:22 +0000] [215884] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 21:01:22 +0000] [215884] [INFO] Listening at: http://0.0.0.0:8001 (215884)
+[2024-09-29 21:01:22 +0000] [215884] [INFO] Using worker: sync
+[2024-09-29 21:01:22 +0000] [215886] [INFO] Booting worker with pid: 215886
+[2024-09-29 21:30:15 +0000] [215884] [INFO] Handling signal: term
+[2024-09-29 21:30:15 +0000] [215886] [INFO] Worker exiting (pid: 215886)
+[2024-09-29 21:30:15 +0000] [215884] [INFO] Shutting down: Master
+[2024-09-29 21:30:16 +0000] [216619] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 21:30:16 +0000] [216619] [INFO] Listening at: http://0.0.0.0:8001 (216619)
+[2024-09-29 21:30:16 +0000] [216619] [INFO] Using worker: sync
+[2024-09-29 21:30:16 +0000] [216621] [INFO] Booting worker with pid: 216621
+Not Found: /conexion/camino/
+[2024-09-29 21:32:08 +0000] [216619] [INFO] Handling signal: term
+[2024-09-29 21:32:08 +0000] [216621] [INFO] Worker exiting (pid: 216621)
+[2024-09-29 21:32:09 +0000] [216619] [INFO] Shutting down: Master
+[2024-09-29 21:32:09 +0000] [216633] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 21:32:09 +0000] [216633] [INFO] Listening at: http://0.0.0.0:8001 (216633)
+[2024-09-29 21:32:09 +0000] [216633] [INFO] Using worker: sync
+[2024-09-29 21:32:09 +0000] [216635] [INFO] Booting worker with pid: 216635
+Not Found: /conexion/camino/
+Not Found: /conexion/camino/
+[2024-09-29 21:32:22 +0000] [216633] [INFO] Handling signal: term
+[2024-09-29 21:32:22 +0000] [216635] [INFO] Worker exiting (pid: 216635)
+[2024-09-29 21:32:22 +0000] [216633] [INFO] Shutting down: Master
+[2024-09-29 21:32:23 +0000] [216639] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 21:32:23 +0000] [216639] [INFO] Listening at: http://0.0.0.0:8001 (216639)
+[2024-09-29 21:32:23 +0000] [216639] [INFO] Using worker: sync
+[2024-09-29 21:32:23 +0000] [216641] [INFO] Booting worker with pid: 216641
+Not Found: /conexion/camino/
+Not Found: /conexion/camino/
+Not Found: /conexion/camino/
+[2024-09-29 21:34:23 +0000] [216639] [INFO] Handling signal: term
+[2024-09-29 21:34:23 +0000] [216641] [INFO] Worker exiting (pid: 216641)
+[2024-09-29 21:34:23 +0000] [216639] [INFO] Shutting down: Master
+[2024-09-29 21:34:24 +0000] [216656] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 21:34:24 +0000] [216656] [INFO] Listening at: http://0.0.0.0:8001 (216656)
+[2024-09-29 21:34:24 +0000] [216656] [INFO] Using worker: sync
+[2024-09-29 21:34:24 +0000] [216658] [INFO] Booting worker with pid: 216658
+Not Found: /conexion/camino/
+[2024-09-29 21:35:42 +0000] [216656] [INFO] Handling signal: term
+[2024-09-29 21:35:42 +0000] [216658] [INFO] Worker exiting (pid: 216658)
+[2024-09-29 21:35:42 +0000] [216656] [INFO] Shutting down: Master
+[2024-09-29 21:35:43 +0000] [216668] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 21:35:43 +0000] [216668] [INFO] Listening at: http://0.0.0.0:8001 (216668)
+[2024-09-29 21:35:43 +0000] [216668] [INFO] Using worker: sync
+[2024-09-29 21:35:43 +0000] [216670] [INFO] Booting worker with pid: 216670
+Not Found: /conexion/camino/
+Not Found: /conexion/camino/
+Not Found: /conexion/camino/
+Not Found: /conexion/camino/
+[2024-09-29 21:39:41 +0000] [216668] [INFO] Handling signal: term
+[2024-09-29 21:39:41 +0000] [216670] [INFO] Worker exiting (pid: 216670)
+[2024-09-29 21:39:41 +0000] [216668] [INFO] Shutting down: Master
+[2024-09-29 21:39:42 +0000] [216700] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 21:39:42 +0000] [216700] [INFO] Listening at: http://0.0.0.0:8001 (216700)
+[2024-09-29 21:39:42 +0000] [216700] [INFO] Using worker: sync
+[2024-09-29 21:39:42 +0000] [216702] [INFO] Booting worker with pid: 216702
+Internal Server Error: /conexion/camino/
+Traceback (most recent call last):
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 75, in get
+    import pudb;pudb.set_trace()
+ModuleNotFoundError: No module named 'pudb'
+[2024-09-29 21:42:01 +0000] [216700] [CRITICAL] WORKER TIMEOUT (pid:216702)
+/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/pudb/__init__.py:255: UserWarning: A non-default handler for signal 2 is already installed (<bound method Worker.handle_quit of <gunicorn.workers.sync.SyncWorker object at 0x7fbb143d5ac0>>). Skipping pudb interrupt support.
+  set_interrupt_handler()
+[2024-09-29 21:42:01 +0000] [216702] [ERROR] Error handling request /conexion/camino/?id_nodo_origen=22&id_nodo_destino=30
+Traceback (most recent call last):
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/maplinker/conexion/views.py", line 77, in get
+    grafo = self.crear_grafo()
+  File "/home/ubuntu/maplinker/conexion/views.py", line 77, in get
+    grafo = self.crear_grafo()
+  File "/usr/lib/python3.8/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/pudb/debugger.py", line 235, in dispatch_line
+    self.user_line(frame)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/pudb/debugger.py", line 477, in user_line
+    self.interaction(frame)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/pudb/debugger.py", line 447, in interaction
+    self.ui.call_with_ui(self.ui.interaction, exc_tuple,
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/pudb/debugger.py", line 2578, in call_with_ui
+    return f(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/pudb/debugger.py", line 2910, in interaction
+    self.event_loop()
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/pudb/debugger.py", line 2601, in event_loop
+    self.message("Welcome to PudB %s!\n\n"
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/pudb/debugger.py", line 2361, in message
+    self.call_with_ui(self.dialog,
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/pudb/debugger.py", line 2578, in call_with_ui
+    return f(*args, **kwargs)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/pudb/debugger.py", line 2447, in dialog
+    return self.event_loop(w)[0]
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/pudb/debugger.py", line 2867, in event_loop
+    keys = self.screen.get_input()
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/urwid/display/_raw_display_base.py", line 284, in get_input
+    self._wait_for_input_ready(self._next_timeout)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/urwid/display/_raw_display_base.py", line 503, in _wait_for_input_ready
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.8/selectors.py", line 468, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+  File "/home/ubuntu/maplinker/venv/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2024-09-29 21:42:01 +0000] [216702] [INFO] Worker exiting (pid: 216702)
+[2024-09-29 21:42:01 +0000] [216788] [INFO] Booting worker with pid: 216788
+Not Found: /conexion/camino/
+Not Found: /conexion/camino/
+Not Found: /conexion/camino/
+Not Found: /conexion/camino/
+Not Found: /conexion/camino/
+Not Found: /conexion/camino/
+[2024-09-29 21:52:08 +0000] [216700] [INFO] Handling signal: term
+[2024-09-29 21:52:08 +0000] [216788] [INFO] Worker exiting (pid: 216788)
+[2024-09-29 21:52:09 +0000] [216700] [INFO] Shutting down: Master
+[2024-09-29 21:52:09 +0000] [217320] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 21:52:09 +0000] [217320] [INFO] Listening at: http://0.0.0.0:8001 (217320)
+[2024-09-29 21:52:09 +0000] [217320] [INFO] Using worker: sync
+[2024-09-29 21:52:09 +0000] [217322] [INFO] Booting worker with pid: 217322
+Not Found: /conexion/camino/
+Not Found: /conexion/camino/
+Not Found: /conexion/camino/
+[2024-09-29 21:54:39 +0000] [217320] [INFO] Handling signal: term
+[2024-09-29 21:54:39 +0000] [217322] [INFO] Worker exiting (pid: 217322)
+[2024-09-29 21:54:39 +0000] [217320] [INFO] Shutting down: Master
+[2024-09-29 21:54:40 +0000] [217405] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 21:54:40 +0000] [217405] [INFO] Listening at: http://0.0.0.0:8001 (217405)
+[2024-09-29 21:54:40 +0000] [217405] [INFO] Using worker: sync
+[2024-09-29 21:54:40 +0000] [217407] [INFO] Booting worker with pid: 217407
+Not Found: /conexion/camino/
+Not Found: /conexion/camino/
+[2024-09-29 21:55:32 +0000] [217405] [INFO] Handling signal: term
+[2024-09-29 21:55:32 +0000] [217407] [INFO] Worker exiting (pid: 217407)
+[2024-09-29 21:55:33 +0000] [217405] [INFO] Shutting down: Master
+[2024-09-29 21:55:33 +0000] [217415] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 21:55:33 +0000] [217415] [INFO] Listening at: http://0.0.0.0:8001 (217415)
+[2024-09-29 21:55:33 +0000] [217415] [INFO] Using worker: sync
+[2024-09-29 21:55:33 +0000] [217417] [INFO] Booting worker with pid: 217417
+Not Found: /conexion/camino/
+[2024-09-29 21:56:24 +0000] [217415] [INFO] Handling signal: term
+[2024-09-29 21:56:24 +0000] [217417] [INFO] Worker exiting (pid: 217417)
+[2024-09-29 21:56:24 +0000] [217415] [INFO] Shutting down: Master
+[2024-09-29 21:56:25 +0000] [217428] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 21:56:25 +0000] [217428] [INFO] Listening at: http://0.0.0.0:8001 (217428)
+[2024-09-29 21:56:25 +0000] [217428] [INFO] Using worker: sync
+[2024-09-29 21:56:25 +0000] [217430] [INFO] Booting worker with pid: 217430
+Not Found: /conexion/camino/
+[2024-09-29 21:58:59 +0000] [217428] [INFO] Handling signal: term
+[2024-09-29 21:58:59 +0000] [217430] [INFO] Worker exiting (pid: 217430)
+[2024-09-29 21:59:00 +0000] [217428] [INFO] Shutting down: Master
+[2024-09-29 21:59:00 +0000] [217493] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 21:59:00 +0000] [217493] [INFO] Listening at: http://0.0.0.0:8001 (217493)
+[2024-09-29 21:59:00 +0000] [217493] [INFO] Using worker: sync
+[2024-09-29 21:59:00 +0000] [217495] [INFO] Booting worker with pid: 217495

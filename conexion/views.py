@@ -68,9 +68,10 @@ class CalcularCaminoAPIView(APIView):
     def get(self, request):
         id_nodo_origen = request.query_params.get('id_nodo_origen')
         id_nodo_destino = request.query_params.get('id_nodo_destino')
-
+        #import pudb;pudb.set_trace()
         # Crear un grafo a partir de las conexiones relevantes
         grafo = self.crear_grafo()
+        #return Response(grafo)
         camino, distancia_total = self.dijkstra(grafo, id_nodo_origen, id_nodo_destino)
 
         if camino is None:
@@ -104,17 +105,21 @@ class CalcularCaminoAPIView(APIView):
     def crear_grafo(self):
         # Crea un grafo a partir de las conexiones en la base de datos
         grafo = defaultdict(list)
-        conexiones = Conexion.objects.all()  # Obtiene todas las conexiones
+        conexiones = Conexion.objects.all()
 
         for conexion in conexiones:
-            # Añade la conexión bidireccional
             grafo[conexion.id_nodo_origen_id].append((conexion.id_nodo_destino_id, conexion.distancia))
             grafo[conexion.id_nodo_destino_id].append((conexion.id_nodo_origen_id, conexion.distancia))
 
-        print(f"Grafo: {dict(grafo)}")  # Para depuración, imprime el grafo
+        #print("Grafo construido:", dict(grafo))  # Depuración: imprime el grafo
         return grafo
 
     def dijkstra(self, grafo, inicio, fin):
+        print(f'Inicio {inicio}, Fin {fin},Grafo: {grafo}')
+        # Verifica si los nodos de inicio y fin están en el grafo
+        if inicio not in grafo or fin not in grafo:
+            return None, None  # O puedes lanzar un error más descriptivo
+
         # Implementación del algoritmo de Dijkstra
         distancias = {nodo: float('infinity') for nodo in grafo}
         distancias[inicio] = 0
@@ -136,7 +141,7 @@ class CalcularCaminoAPIView(APIView):
                     caminos[vecino] = caminos[nodo_actual] + [vecino]
                     heapq.heappush(prioridad, (distancia, vecino))
 
-        if distancias[fin] == float('infinity'):
+        if fin not in distancias or distancias[fin] == float('infinity'):
             return None, None
 
         return caminos[fin], distancias[fin]
