@@ -67,8 +67,8 @@ class ConexionRetrieveUpdateDestroyAPIView(APIView):
 
 class CalcularCaminoAPIView(APIView):
     def get(self, request):
-        id_nodo_origen = request.query_params.get('id_nodo_origen')
-        id_nodo_destino = request.query_params.get('id_nodo_destino')
+        id_nodo_origen = int(request.query_params.get('id_nodo_origen'))
+        id_nodo_destino = int(request.query_params.get('id_nodo_destino'))
 
         # Crear un grafo a partir de las conexiones relevantes
         grafo = self.crear_grafo()
