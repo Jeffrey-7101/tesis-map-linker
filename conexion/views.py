@@ -111,11 +111,18 @@ class CalcularCaminoAPIView(APIView):
             grafo[conexion.id_nodo_origen_id].append((conexion.id_nodo_destino_id, conexion.distancia))
             grafo[conexion.id_nodo_destino_id].append((conexion.id_nodo_origen_id, conexion.distancia))
 
+<<<<<<< HEAD
         #print("Grafo construido:", dict(grafo))  # Depuración: imprime el grafo
         return grafo
 
     def dijkstra(self, grafo, inicio, fin):
         print(f'Inicio {inicio}, Fin {fin},Grafo: {grafo}')
+=======
+        print("Grafo construido:", dict(grafo))  # Depuración: imprime el grafo
+        return grafo
+
+    def dijkstra(self, grafo, inicio, fin):
+>>>>>>> 40e0f5dba47c69530a114bb0be47afb469c49b0c
         # Verifica si los nodos de inicio y fin están en el grafo
         if inicio not in grafo or fin not in grafo:
             return None, None  # O puedes lanzar un error más descriptivo
