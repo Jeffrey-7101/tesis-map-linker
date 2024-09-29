@@ -68,11 +68,14 @@ class CalcularCaminoAPIView(APIView):
     def get(self, request):
         id_nodo_origen = request.query_params.get('id_nodo_origen')
         id_nodo_destino = request.query_params.get('id_nodo_destino')
-        grafo = self.crear_grafo()
+
+        # Crear un grafo a partir de las conexiones relevantes
+        grafo = self.crear_grafo(id_nodo_origen, id_nodo_destino)
         camino, distancia_total = self.dijkstra(grafo, id_nodo_origen, id_nodo_destino)
 
         if camino is None:
-            return Response({'detail': 'No se pudo encontrar un camino entre los nodos proporcionados.'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'detail': 'No se pudo encontrar un camino entre los nodos proporcionados.'}, 
+                            status=status.HTTP_404_NOT_FOUND)
 
         # Generar la lista de conexiones entre los nodos en el camino
         distancias_camino = []
@@ -80,7 +83,13 @@ class CalcularCaminoAPIView(APIView):
             nodo_actual = camino[i]
             siguiente_nodo = camino[i + 1]
             # Buscar la distancia de la conexión
-            conexion = Conexion.objects.get(id_nodo_origen=nodo_actual, id_nodo_destino=siguiente_nodo)
+            try:
+                conexion = Conexion.objects.get(id_nodo_origen=nodo_actual, id_nodo_destino=siguiente_nodo)
+            except Conexion.DoesNotExist:
+                # Manejar el caso en que la conexión no existe
+                return Response({'detail': f'No existe conexión entre {nodo_actual} y {siguiente_nodo}.'}, 
+                                status=status.HTTP_404_NOT_FOUND)
+            
             distancias_camino.append({
                 'nodo_origen': nodo_actual,
                 'nodo_destino': siguiente_nodo,
@@ -92,13 +101,25 @@ class CalcularCaminoAPIView(APIView):
             'distancia_total': distancia_total
         }, status=status.HTTP_200_OK)
 
-    def crear_grafo(self):
+    def crear_grafo(self, id_nodo_origen, id_nodo_destino):
         # Crea un grafo a partir de las conexiones en la base de datos
         grafo = defaultdict(list)
-        conexiones = Conexion.objects.all()
+        
+        # Filtra las conexiones que involucran los nodos de origen y destino
+        conexiones = Conexion.objects.filter(
+            id_nodo_origen=id_nodo_origen
+        ) | Conexion.objects.filter(
+            id_nodo_destino=id_nodo_origen
+        ) | Conexion.objects.filter(
+            id_nodo_origen=id_nodo_destino
+        ) | Conexion.objects.filter(
+            id_nodo_destino=id_nodo_destino
+        )
+
         for conexion in conexiones:
             grafo[conexion.id_nodo_origen].append((conexion.id_nodo_destino, conexion.distancia))
-            grafo[conexion.id_nodo_destino].append((conexion.id_nodo_origen, conexion.distancia))  # Para conexiones bidireccionales
+            grafo[conexion.id_nodo_destino].append((conexion.id_nodo_origen, conexion.distancia))
+
         return grafo
 
     def dijkstra(self, grafo, inicio, fin):
