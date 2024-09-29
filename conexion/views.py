@@ -70,7 +70,7 @@ class CalcularCaminoAPIView(APIView):
         id_nodo_destino = request.query_params.get('id_nodo_destino')
 
         # Crear un grafo a partir de las conexiones relevantes
-        grafo = self.crear_grafo(id_nodo_origen, id_nodo_destino)
+        grafo = self.crear_grafo()
         camino, distancia_total = self.dijkstra(grafo, id_nodo_origen, id_nodo_destino)
 
         if camino is None:
