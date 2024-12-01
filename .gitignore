@@ -8,3 +8,5 @@ __pycache__/
 # Ignorar otros archivos de entorno
 .env
 
+#Ignorar logs
+logs/
